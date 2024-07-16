@@ -1,21 +1,17 @@
 package main
 
 import (
-	"log"
-
-	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v2"
+	"github.com/zulanggara/TryGoFiber/routers"
 )
 
 func main() {
-	// Initialize a new Fiber app
 	app := fiber.New()
 
-	// Define a route for the GET method on the root path '/'
-	app.Get("/", func(c fiber.Ctx) error {
-		// Send a string response to the client
-		return c.SendString("Hello, World 👋!")
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.SendString("Hello, Coders! Welcome to Go programming language.")
 	})
+	routers.SetupRoutes(app)
 
-	// Start the server on port 3000
-	log.Fatal(app.Listen(":3000"))
+	app.Listen(":8080")
 }
