@@ -1,0 +1,19 @@
+{
+  "app": {
+    "name": "Test Rest Api - GoFiber",
+    "version": "v0.1.0",
+    "author": "Zul Anggara"
+  },
+  "service": {
+    "app_env":"development",
+    "server_address": ":8080",
+    "port":8080
+  },
+  "database": {
+    "host":"127.0.0.1",
+    "port":3306,
+    "user":"root",
+    "pass":"",
+    "database_name":"rest_api_go"
+  }
+}

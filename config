@@ -1,0 +1,19 @@
+{
+  "app": {
+    "name": "APP Name",
+    "version": "v0.0.0",
+    "author": "John Doe"
+  },
+  "service": {
+    "app_env":"development",
+    "server_address": ":8080",
+    "port":8080
+  },
+  "database": {
+    "host":"127.0.0.1",
+    "port":3306,
+    "user":"",
+    "pass":"",
+    "database_name":""
+  }
+}
