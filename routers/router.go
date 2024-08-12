@@ -7,14 +7,16 @@ import (
 
 func SetupRoutes(app *fiber.App) {
 
-	app.Get("/languages", handlers.GetAllLanguagesData)
-	app.Post("/languages", handlers.CreateNewLanguageData)
-	app.Delete("/languages/:id", handlers.DeleteLanguageById)
-	app.Put("/languages/:id", handlers.UpdateLanguageDataById)
+	languageRoute := app.Group("/language")
+	languageRoute.Get("/", handlers.GetAllLanguagesData)
+	languageRoute.Post("/", handlers.CreateNewLanguageData)
+	languageRoute.Delete("/:id", handlers.DeleteLanguageById)
+	languageRoute.Put("/:id", handlers.UpdateLanguageDataById)
 
-	app.Get("/user/list", handlers.GetAllUsers)
-	app.Get("/user/find/:id", handlers.GetUserById)
-	app.Post("/user/create", handlers.CreateNewUser)
-	app.Put("/user/update/:id", handlers.UpdateUserDataById)
-	app.Delete("/user/delete/:id", handlers.DeleteUserDataById)
+	userRoute := app.Group("/user")
+	userRoute.Get("/list", handlers.GetAllUsers)
+	userRoute.Get("/find/:id", handlers.GetUserById)
+	userRoute.Post("/create", handlers.CreateNewUser)
+	userRoute.Put("/update/:id", handlers.UpdateUserDataById)
+	userRoute.Delete("/delete/:id", handlers.DeleteUserDataById)
 }
